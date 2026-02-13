@@ -7,12 +7,16 @@ import React, { useState } from "react";
 
       const submitHandler = (e)=>{
          e.preventDefault();
-        const dados = {
-        email: userEmail,
-        password:userPassword
-      }
-      handleLogin(true)
-      console.log("dados: ", dados )
+        const email = "bryan@email.com",
+              password = "Admin@Admin";
+
+        if( userEmail === email && userPassword === password ){
+          handleLogin(true)
+          console.log("Login bem sucedido")
+        }else{
+          alert("Dados incorretos")
+          handleLogin(false)
+        }      
       }
 
       return(
@@ -37,7 +41,10 @@ import React, { useState } from "react";
         <input 
         value={userEmail} 
         onChange={(e)=> setUserEmail(e.target.value)}
-        type="email" placeholder='Digite seu email' id='email' autoComplete="off"
+        type="email" 
+        placeholder='Digite seu email' id='email'
+        autoComplete="off"
+
         className="px-3 py-2 font-semibold placeholder:gray-500 text-black rounded-2xl border-none ring-1 ring-gray-300 focus:ring-gray-500 focus:ring-2"
         />
         </div>
@@ -49,7 +56,9 @@ import React, { useState } from "react";
         <input 
         value={userPassword}
         onChange={(e)=> setUserPassword(e.target.value)} 
-        type="password" placeholder='Digite sua senha' id='password'
+        type="password" 
+        placeholder='Digite sua senha' 
+        id='password'
         className="px-3 py-2 font-semibold placeholder:gray-500 text-black rounded-2xl border-none ring-1 ring-gray-300 focus:ring-gray-500 focus:ring-2"
         />
         </div>
