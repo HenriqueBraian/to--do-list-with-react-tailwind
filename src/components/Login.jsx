@@ -7,8 +7,8 @@ import React, { useState } from "react";
 
       const submitHandler = (e)=>{
          e.preventDefault();
-        const email = "bryan@email.com",
-              password = "Admin@Admin";
+        const email = "hb@email.com",
+              password = "9090"
 
         if( userEmail === email && userPassword === password ){
           handleLogin(true)
@@ -22,7 +22,7 @@ import React, { useState } from "react";
       return(
       <div className="min-h-screen p-4 bg-cyan-600 flex flex-col items-center justify-center">
 
-      <form onSubmit={submitHandler} action="" className="bg-slate-200 p-8 flex flex-col 
+      <form onSubmit={submitHandler} action="" className="bg-slate-200   p-8 flex flex-col 
                                 items-center justify-center rounded-2xl gap-5 w-full max-w-sm 
                                 shadow-xl shadow-blue-900 ">
 
