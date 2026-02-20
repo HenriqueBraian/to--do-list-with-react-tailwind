@@ -1,28 +1,11 @@
 import React, { useState } from "react";
 
 
-   function Login({handleLogin}){
-      const [userEmail, setUserEmail] = useState('');
-      const [userPassword, setUserPassword] = useState('');
-
-      const submitHandler = (e)=>{
-         e.preventDefault();
-        const email = "hb@email.com",
-              password = "9090"
-
-        if( userEmail === email && userPassword === password ){
-          handleLogin(true)
-          console.log("Login bem sucedido")
-        }else{
-          alert("Dados incorretos")
-          handleLogin(false)
-        }      
-      }
-
+   function Login({}){
       return(
       <div className="min-h-screen p-4 bg-cyan-600 flex flex-col items-center justify-center">
 
-      <form onSubmit={submitHandler} action="" className="bg-slate-200   p-8 flex flex-col 
+      <form action="" className="bg-slate-200   p-8 flex flex-col 
                                 items-center justify-center rounded-2xl gap-5 w-full max-w-sm 
                                 shadow-xl shadow-blue-900 ">
 
@@ -39,8 +22,6 @@ import React, { useState } from "react";
          text-gray-700"><i className="ri-mail-line"></i> Seu e-mail</label>
 
         <input 
-        value={userEmail} 
-        onChange={(e)=> setUserEmail(e.target.value)}
         type="email" 
         placeholder='Digite seu email' id='email'
         autoComplete="off"
@@ -54,8 +35,6 @@ import React, { useState } from "react";
         <label htmlFor="password" className="font-primary font-semibold text-gray-700"><i className="ri-lock-line"></i>Sua senha</label>
 
         <input 
-        value={userPassword}
-        onChange={(e)=> setUserPassword(e.target.value)} 
         type="password" 
         placeholder='Digite sua senha' 
         id='password'
