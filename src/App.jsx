@@ -5,6 +5,16 @@ import AddToDo from './components/AddTodo'
 import Tasks from './components/Tasks'
 
 function App() {
+  const [isLogged, setIsLogged] = useState(false);
+
+  const handleLogin = (email, password) =>{
+    if(email === "user@email.com" && password === "1234"){
+      setIsLogged(true)
+    }else{
+      alert("dados incorretos")
+    }
+  }
+
   const [task, setTask] = useState([
     {
       id: 1,
@@ -16,12 +26,6 @@ function App() {
       id: 2,
       title: "Ir à academia",
       description: 'treino de ombro',
-      isCompleted: false
-    },
-    {
-      id: 3,
-      title: "Ver um filme",
-      description: 'assistir serie',
       isCompleted: false
     }
   ])
@@ -44,7 +48,7 @@ function App() {
           t.id === id ? {...t, isCompleted : !t.isCompleted} : t)
         )
   }
-    
+    //deletar tarefa
   const deleteTask = (id)=>{
     setTask(task.filter((t)=> t.id !== id))
   }
@@ -52,8 +56,15 @@ function App() {
   return (
     <div  className="min-h-screen p-8 bg-blue-50">
       <div className="max-w-2xl mx-auto p-6 flex flex-col items-center bg-white rounded-lg shadow-lg">
-     <AddToDo onAdd={addTask} />
-     <Tasks tarefas={task} onToggle={toggleTask} onDelete={deleteTask}/>
+        {!isLogged ?(
+          <Login onLogin={handleLogin} />
+        ):(
+          <>
+          <AddToDo onAdd={addTask} />
+          <Tasks tarefas={task} onToggle={toggleTask} onDelete={deleteTask}/>     
+          </>
+        )
+      }
      </div>
     </div>
   )
