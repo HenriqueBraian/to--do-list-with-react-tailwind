@@ -1,6 +1,5 @@
 function Tasks({tarefas, onToggle, onDelete}){
     return(
-        
         <ul className="space-y-3 w-full p-4 rounded-2xl shadow bg-gray-50">
             {tarefas.map( (tarefa)=>
 

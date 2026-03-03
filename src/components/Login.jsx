@@ -11,11 +11,9 @@ import React, { useState } from "react";
       };
 
       return(
-      <div className="min-h-screen p-4 bg-cyan-600 flex flex-col items-center justify-center">
+      <div className="w-full">
 
-      <form onSubmit={handleSubmit} className="bg-slate-200   p-8 flex flex-col 
-                                items-center justify-center rounded-2xl gap-5 w-full max-w-sm 
-                                shadow-xl shadow-blue-900 ">
+      <form onSubmit={handleSubmit} className="bg-slate-200 p-8 flex flex-col items-center justify-center rounded-2xl gap-5 w-full max-w-sm shadow-md shadow-blue-700 mx-auto">
 
         <div className="text-center">
           <i className="ri-account-pin-box-line text-4xl text-blue-500"></i>

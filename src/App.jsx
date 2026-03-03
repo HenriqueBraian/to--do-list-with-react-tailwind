@@ -55,7 +55,7 @@ function App() {
 
   return (
     <div  className="min-h-screen p-8 bg-blue-50">
-      <div className="max-w-2xl mx-auto p-6 flex flex-col items-center bg-white rounded-lg shadow-lg">
+      <div className="max-w-2xl mx-auto my-auto p-6 flex flex-col bg-white rounded-lg shadow-lg">
         {!isLogged ?(
           <Login onLogin={handleLogin} />
         ):(
