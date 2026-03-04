@@ -11,7 +11,7 @@ import React, { useState } from "react";
       };
 
       return(
-      <div className="w-full">
+      <div className="w-full ">
 
       <form onSubmit={handleSubmit} className="bg-slate-200 p-8 flex flex-col items-center justify-center rounded-2xl gap-5 w-full max-w-sm shadow-md shadow-blue-700 mx-auto">
 

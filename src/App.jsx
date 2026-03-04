@@ -54,18 +54,17 @@ function App() {
   }
 
   return (
-    <div  className="min-h-screen p-8 bg-blue-50">
-      <div className="max-w-2xl mx-auto my-auto p-6 flex flex-col bg-white rounded-lg shadow-lg">
+    <div  className="min-h-screen p-8 bg-gray-300 flex items-center">
+      
         {!isLogged ?(
           <Login onLogin={handleLogin} />
         ):(
-          <>
+          <div className="w-full max-w-2xl p-6 flex flex-col bg-slate-200 rounded-lg shadow-lg mx-auto my-auto">
           <AddToDo onAdd={addTask} />
           <Tasks tarefas={task} onToggle={toggleTask} onDelete={deleteTask}/>     
-          </>
+          </div>
         )
       }
-     </div>
     </div>
   )
 }
