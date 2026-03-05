@@ -1,13 +1,19 @@
 import React, { useState } from "react";
+import { ToastContainer } from "react-toastify";
 
+   function Login({onLogin, errorLogin}){
+      const [email, setEmail] = useState("");
+      const [password, setPassword] = useState("");
 
-   function Login({}){
+      const handleSubmit = (e)=>{
+        e.preventDefault();
+        onLogin(email,password)
+      };
+
       return(
-      <div className="min-h-screen p-4 bg-cyan-600 flex flex-col items-center justify-center">
+      <div className="w-full ">
 
-      <form action="" className="bg-slate-200   p-8 flex flex-col 
-                                items-center justify-center rounded-2xl gap-5 w-full max-w-sm 
-                                shadow-xl shadow-blue-900 ">
+      <form onSubmit={handleSubmit} className="bg-slate-200 p-8 flex flex-col items-center justify-center rounded-2xl gap-5 w-full max-w-sm shadow-md shadow-blue-700 mx-auto">
 
         <div className="text-center">
           <i className="ri-account-pin-box-line text-4xl text-blue-500"></i>
@@ -22,9 +28,11 @@ import React, { useState } from "react";
          text-gray-700"><i className="ri-mail-line"></i> Seu e-mail</label>
 
         <input 
-        type="email" 
+        type="email"
+        value={email}
+        onChange={(e)=> setEmail(e.target.value)}
         placeholder='Digite seu email' id='email'
-        autoComplete="off"
+
 
         className="px-3 py-2 font-semibold placeholder:gray-500 text-black rounded-2xl border-none ring-1 ring-gray-300 focus:ring-gray-500 focus:ring-2"
         />
@@ -35,7 +43,9 @@ import React, { useState } from "react";
         <label htmlFor="password" className="font-primary font-semibold text-gray-700"><i className="ri-lock-line"></i>Sua senha</label>
 
         <input 
-        type="password" 
+        type="password"
+        value={password}
+        onChange={(e)=> setPassword(e.target.value)}
         placeholder='Digite sua senha' 
         id='password'
         className="px-3 py-2 font-semibold placeholder:gray-500 text-black rounded-2xl border-none ring-1 ring-gray-300 focus:ring-gray-500 focus:ring-2"
@@ -46,7 +56,8 @@ import React, { useState } from "react";
           <a href="#" className="hover:text-gray-700">Esqueci minha senha</a>
          </div>
         
-        <button type='submit' className="bg-blue-400 p-2 w-full rounded-2xl hover:bg-blue-500 shadow-2xl font-primary tracking-widest"> Login </button>
+        <button onClick={errorLogin} type='submit' className="bg-blue-400 p-2 w-full rounded-2xl hover:bg-blue-500 shadow-2xl font-primary tracking-widest"> Login </button>
+        <ToastContainer/>
       </form>
 
     </div>
