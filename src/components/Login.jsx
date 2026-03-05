@@ -1,7 +1,7 @@
 import React, { useState } from "react";
+import { ToastContainer } from "react-toastify";
 
-
-   function Login({onLogin}){
+   function Login({onLogin, errorLogin}){
       const [email, setEmail] = useState("");
       const [password, setPassword] = useState("");
 
@@ -32,7 +32,6 @@ import React, { useState } from "react";
         value={email}
         onChange={(e)=> setEmail(e.target.value)}
         placeholder='Digite seu email' id='email'
-        autoComplete="off"
 
         className="px-3 py-2 font-semibold placeholder:gray-500 text-black rounded-2xl border-none ring-1 ring-gray-300 focus:ring-gray-500 focus:ring-2"
         />
@@ -56,7 +55,8 @@ import React, { useState } from "react";
           <a href="#" className="hover:text-gray-700">Esqueci minha senha</a>
          </div>
         
-        <button type='submit' className="bg-blue-400 p-2 w-full rounded-2xl hover:bg-blue-500 shadow-2xl font-primary tracking-widest"> Login </button>
+        <button onClick={errorLogin} type='submit' className="bg-blue-400 p-2 w-full rounded-2xl hover:bg-blue-500 shadow-2xl font-primary tracking-widest cursor-pointer"> Login </button>
+        <ToastContainer/>
       </form>
 
     </div>
